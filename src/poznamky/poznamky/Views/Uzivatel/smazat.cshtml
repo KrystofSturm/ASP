@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Smazat ucet";
+}
+
+<div>
+    <h1>Poznamky - Smazat ucet</h1>
+    <form asp-action="smazat", asp-controller="Uzivatel" method="post">
+        <input name="heslo" placeholder="Zadejte heslo" type="password" />
+        <input name="check" type="checkbox" >Opravdu chcete smazat svuj ucet?</input>
+        <input value="Smazat ucet" type="submit" />
+    </form>
+</div>

@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Registrace";
+}
+
+<div>
+    <h1>Poznamky - Registrace</h1>
+    <form asp-action="registrace", asp-controller="Uzivatel" method="post">
+        <input name="username" placeholder="Zadejte uživatelské jméno" type="text" />
+        <input name="heslo" placeholder="Zadejte heslo" type="password" />
+        <input name="hesloConfirm" placeholder="Zadejte heslo znovu" type="password" />
+        <input name="souhlas" placeholder="„Souhlasím, že mnou vložená data mohou být využita pro trénink AI" type="checkbox" />
+        <input value="Registrovat se" type="submit" />
+    </form>
+</div>

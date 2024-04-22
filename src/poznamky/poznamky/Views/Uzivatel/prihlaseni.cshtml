@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Prihlaseni";
+}
+
+<div>
+    <h1>Poznamky - Prihlaseni</h1>
+    <form asp-action="prihlaseni" , asp-controller="Uzivatel" method="post">
+        <input name="username" placeholder="Zadejte uživatelské jméno" type="text" />
+        <input name="heslo" placeholder="Zadejte heslo" type="password" />
+        <input value="Prihlasit se" type="submit" />
+    </form>
+</div>

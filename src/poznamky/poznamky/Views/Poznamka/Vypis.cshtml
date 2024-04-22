@@ -1,0 +1,50 @@
+﻿@model List<PoznamkaModel>
+@{
+    ViewData["Title"] = "Vypis";
+}
+
+<div>
+    <h1>Poznaky Vypis</h1>
+    <div class="Poznaky">
+        @{
+            if (Model != null)
+            {
+                foreach(PoznamkaModel poznamka in Model)
+                {
+                    if (poznamka.Dulezita)
+                    {
+                        <div class="Dulezita" style="font-weight: bold; color: red !important;">
+                            <h3>
+                                @poznamka.Title
+                            </h3>
+                            <div class="datum">
+                                @poznamka.Vlozeno
+                            </div>
+                            <p>
+                                @poznamka.Body
+                            </p>
+                            <a href="/Poznamka/Dulezita/@poznamka.Id">Neni dulezita</a>
+                            <a href="/Poznamka/Smazat/@poznamka.Id">Smazat</a>
+                        </div>
+                    } else
+                    {
+                        <div class="poznamka">
+                            <h3>
+                                @poznamka.Title
+                            </h3>
+                            <div class="datum">
+                                @poznamka.Vlozeno
+                            </div>
+                            <p>
+                                @poznamka.Body
+                            </p>
+                            <a href="/Poznamka/Dulezita/@poznamka.Id">Dulezita</a>
+                            <a href="/Poznamka/Smazat/@poznamka.Id">Smazat</a>
+                        </div>
+                    }
+                    
+                }
+            }
+        }
+    </div>
+</div>

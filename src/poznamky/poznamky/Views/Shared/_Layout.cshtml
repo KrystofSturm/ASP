@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+@{
+    int? uzivatel = null;
+    if (HttpContextAccessor.HttpContext != null)
+    {
+        uzivatel = HttpContextAccessor.HttpContext.Session.GetInt32("ID");
+    }
+}
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Poznamky</title>
+    <link rel="stylesheet" src="/css/site.css" />
+    <link rel="stylesheet" src="/css/style.css" />
+</head>
+<body>
+    <header>
+        <h1>Poznamky Kosinka</h1>
+        <nav>
+            
+            @if(uzivatel != null)
+            {
+                <a asp-action="Vypis" asp-controller="Poznamka">Vypis</a>
+                <a asp-action="Pridat" asp-controller="Poznamka">Pridat</a>
+                <a asp-action="odhlaseni" asp-controller="Uzivatel">Odhlásit</a>
+                <a asp-action="smazat" asp-controller="Uzivatel">Smazat účet</a>
+            }
+            else
+            {
+                <a asp-action="registrace" asp-controller="Uzivatel">Registrovat</a>
+                <a asp-action="prihlaseni" asp-controller="Uzivatel">Prihlasit</a>
+            }
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        Jakub Kosinka 2024
+    </footer>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

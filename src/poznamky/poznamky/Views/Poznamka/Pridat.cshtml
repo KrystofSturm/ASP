@@ -1,0 +1,16 @@
+﻿@model List<PoznamkaModel>
+@{
+    ViewData["Title"] = "Pridani";
+}
+
+<div>
+    <h1>Poznaky pridat</h1>
+    <div class="pridat">
+        <form asp-action="Pridat" , asp-controller="Poznamka" method="post">
+            <input name="nadpis" placeholder="Zadejte nadpis" type="text" />
+            <input name="body" placeholder="Zadejte text" type="text" />
+            <input value="Pridat" type="submit" />
+        </form>
+
+    </div>
+</div>
